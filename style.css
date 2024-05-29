@@ -11,7 +11,7 @@ h1{
 form{
     background-color:  hsl(0, 0%, 100%);
     text-align: center;
-    max-width: 350px;
+    max-width: 750px;
     margin: auto;
     padding: 25px;
     border-radius: 10px;
@@ -50,4 +50,22 @@ button:hover{
 #result{
     font-size: 1.75em;
     font-weight: bold;
+}
+
+#calismalar, td, th{
+    width: 100%;
+    border: 1px solid;
+    border-collapse: collapse;    
+}
+
+a:link, a:visited{
+    text-decoration: none;
+    color: rgb(43, 101, 226);
+}
+
+a:hover{
+    text-decoration: none;
+    color: rgb(38, 221, 228);
+    text-decoration-line: underline;
+    text-decoration-color: rgb(230, 197, 50);
 }
