@@ -1,0 +1,4 @@
+baseURL = ''
+languageCode = 'en-us'
+title = 'Blog Selçuk'
+theme = 'PaperMod'
