@@ -1,4 +1,4 @@
-baseURL = ''
+baseURL = 'selcukdinc.github.io'
 languageCode = 'en-us'
 title = 'Blog Selçuk'
 theme = 'PaperMod'
