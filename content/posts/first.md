@@ -6,6 +6,8 @@ draft = false
 
 Lets learn basics markdown with code examples.
 
+[edit1 (02.08.2024)] This post updated when new knowledge has reached. This post date will be first push date. 
+
 Headers save the day!
 # Heading 1
 ```

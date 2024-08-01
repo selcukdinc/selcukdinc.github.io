@@ -6,24 +6,19 @@
     <description>Recent content in Posts on Blog Selçuk</description>
     <generator>Hugo -- 0.130.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Jul 2024 21:35:06 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jul 2024 20:29:23 +0300</lastBuildDate>
     <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hugo Basics</title>
-      <link>//localhost:1313/posts/hugo-basics/</link>
-      <pubDate>Tue, 30 Jul 2024 21:35:06 +0300</pubDate>
-      <guid>//localhost:1313/posts/hugo-basics/</guid>
-      <description>Create New Post When we need post new something, open your terminal in your hugo project folder and write the command below.
-hugo new posts/new-file.md and hugo automatically create file like this
-+++ title = &amp;#39;Hugo Basics&amp;#39; date = 2024-07-30T21:35:06+03:00 draft = false +++ </description>
-    </item>
     <item>
       <title>MarkDown Guide </title>
       <link>//localhost:1313/posts/first/</link>
       <pubDate>Tue, 30 Jul 2024 20:29:23 +0300</pubDate>
       <guid>//localhost:1313/posts/first/</guid>
-      <description>Lets learn basics markdown with practices
-Heading 1 # Heading 1 Heading 2 ## Heading 2 Heading 3 ### Heading 3 Heading 4 #### Heading 4 Heading 5 ##### Heading 5 Heading 6 ###### Heading 6 </description>
+      <description>Lets learn basics markdown with code examples.
+Headers save the day!
+Heading 1 # Heading 1 Heading 2 ## Heading 2 Heading 3 ### Heading 3 Heading 4 #### Heading 4 Heading 5 ##### Heading 5 Heading 6 ###### Heading 6 Embedded Code If you add your code examples use this quotes
+``` print(&amp;#34;hello World!&amp;#34;) ``` looking like this
+print(&amp;#34;hello World!&amp;#34;) or you can added print() like this
+or you can added `print()` like this I wanna forum discuss history</description>
     </item>
   </channel>
 </rss>
