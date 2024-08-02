@@ -6,12 +6,12 @@
     <description>Recent content on Blog Selçuk</description>
     <generator>Hugo -- 0.130.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Aug 2024 01:00:06 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 02 Aug 2024 08:00:06 +0300</lastBuildDate>
     <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo Basics</title>
       <link>//localhost:1313/posts/hugo-basics/</link>
-      <pubDate>Fri, 02 Aug 2024 01:00:06 +0300</pubDate>
+      <pubDate>Fri, 02 Aug 2024 08:00:06 +0300</pubDate>
       <guid>//localhost:1313/posts/hugo-basics/</guid>
       <description>First Thing First Actually first of all you know how do start localhost your web site. And when your start your host, your files can be hot reload during server live. Easy to use. Write
 hugo server Create New Post When we need post new something, open your terminal in your hugo project folder and write the command below.

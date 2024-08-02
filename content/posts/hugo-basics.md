@@ -31,3 +31,9 @@ in my case i set the date like this
 ```
 date = 2024-08-02T08:00:06+03:00
 ```
+[edit1 (03.08.2024)]
+upss if you dont re-deploy on github actions, site will be expired and new post doest reloaded. in my case, resolve path is
+```
+github > actions > Deploy Hugo site to Pages > Run workflow
+```
+if your case 'Deploy Hugo site to Pages' doesnt appear firstly add this workflow in github, here is the [guide](https://gohugo.io/hosting-and-deployment/hosting-on-github/)

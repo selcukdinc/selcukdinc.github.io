@@ -112,7 +112,7 @@ hugo new posts/new-file.md and hugo automatically create file like this
     <h1 class="post-title entry-hint-parent">
       Hugo Basics
     </h1>
-    <div class="post-meta"><span title='2024-08-02 01:00:06 +0300 +03'>August 2, 2024</span>
+    <div class="post-meta"><span title='2024-08-02 08:00:06 +0300 +03'>August 2, 2024</span>
 
 </div>
   </header> 
@@ -135,7 +135,11 @@ draft = false
 </blockquote>
 <p>in my case i set the date like this</p>
 <pre tabindex="0"><code>date = 2024-08-02T08:00:06+03:00
-</code></pre>
+</code></pre><p>[edit1 (03.08.2024)]
+upss if you dont re-deploy on github actions, site will be expired and new post doest reloaded. in my case, resolve path is</p>
+<pre tabindex="0"><code>github &gt; actions &gt; Deploy Hugo site to Pages &gt; Run workflow
+</code></pre><p>if your case &lsquo;Deploy Hugo site to Pages&rsquo; doesnt appear firstly add this workflow in github, here is the <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">guide</a></p>
+
 
   </div>
 
