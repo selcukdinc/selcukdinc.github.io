@@ -3,8 +3,25 @@ title = 'Hugo Basics'
 date = 2024-08-02T08:00:06+03:00
 draft = false
 +++
+[edit2 (04.08.2024)] ~
+### Install Hugo on Macos 
+Easy installation with brew, if your pc doesnt recognise brew, firstly install package manager brew [here](https://brew.sh)
+```
+brew install hugo
+```
+### Install Hugo on Windows
+Easy installation with chocolatey, if your pc doesnt recgnoise chocolatey, firstly install package manager cohoco in [here](https://chocolatey.org/install). tip : use admin powershell
+```
+choco install hugo-extended
+```
+
+[hugo installation page](https://gohugo.io/categories/installation/)
+
+~
 ## First Thing First
-Actually first of all you know how do start localhost your web site. And when your start your host, your files can be hot reload during server live. Easy to use. Write
+Actually first of all you know how do start localhost your web site. And when your start your host, your files can be hot reload during server live. Easy to use. Write terminal 
+
+[edit2 (04.08.2024)] (terminal opened project location)
 ```
 hugo server
 ```
@@ -32,7 +49,7 @@ in my case i set the date like this
 date = 2024-08-02T08:00:06+03:00
 ```
 [edit1 (03.08.2024)]
-upss if you dont re-deploy on github actions, site will be expired and new post doest reloaded. in my case, resolve path is
+upss if you dont re-deploy on github actions, site will be expired and new post doesnt reloaded. in my case, resolve path is
 ```
 github > actions > Deploy Hugo site to Pages > Run workflow
 ```

@@ -7,10 +7,12 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Hugo Basics | Blog Selçuk</title>
 <meta name="keywords" content="">
-<meta name="description" content="First Thing First Actually first of all you know how do start localhost your web site. And when your start your host, your files can be hot reload during server live. Easy to use. Write
-hugo server Create New Post When we need post new something, open your terminal in your hugo project folder and write the command below.
-hugo new posts/new-file.md and hugo automatically create file like this
-&#43;&#43;&#43; title = &#39;Hugo Basics&#39; date = 2024-07-30T21:35:06&#43;03:00 draft = false &#43;&#43;&#43; Yeah i discover all ready exist feature">
+<meta name="description" content="[edit2 (04.08.2024)] ~
+Install Hugo on Macos Easy installation with brew, if your pc doesnt recognise brew, firstly install package manager brew here
+brew install hugo Install Hugo on Windows Easy installation with chocolatey, if your pc doesnt recgnoise chocolatey, firstly install package manager cohoco in here. tip : use admin powershell
+choco install hugo-extended hugo installation page
+~
+First Thing First Actually first of all you know how do start localhost your web site.">
 <meta name="author" content="">
 <link rel="canonical" href="//localhost:1313/posts/hugo-basics/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
@@ -116,8 +118,18 @@ hugo new posts/new-file.md and hugo automatically create file like this
 
 </div>
   </header> 
-  <div class="post-content"><h2 id="first-thing-first">First Thing First<a hidden class="anchor" aria-hidden="true" href="#first-thing-first">#</a></h2>
-<p>Actually first of all you know how do start localhost your web site. And when your start your host, your files can be hot reload during server live. Easy to use. Write</p>
+  <div class="post-content"><p>[edit2 (04.08.2024)] ~</p>
+<h3 id="install-hugo-on-macos">Install Hugo on Macos<a hidden class="anchor" aria-hidden="true" href="#install-hugo-on-macos">#</a></h3>
+<p>Easy installation with brew, if your pc doesnt recognise brew, firstly install package manager brew <a href="https://brew.sh">here</a></p>
+<pre tabindex="0"><code>brew install hugo
+</code></pre><h3 id="install-hugo-on-windows">Install Hugo on Windows<a hidden class="anchor" aria-hidden="true" href="#install-hugo-on-windows">#</a></h3>
+<p>Easy installation with chocolatey, if your pc doesnt recgnoise chocolatey, firstly install package manager cohoco in <a href="https://chocolatey.org/install">here</a>. tip : use admin powershell</p>
+<pre tabindex="0"><code>choco install hugo-extended
+</code></pre><p><a href="https://gohugo.io/categories/installation/">hugo installation page</a></p>
+<p>~</p>
+<h2 id="first-thing-first">First Thing First<a hidden class="anchor" aria-hidden="true" href="#first-thing-first">#</a></h2>
+<p>Actually first of all you know how do start localhost your web site. And when your start your host, your files can be hot reload during server live. Easy to use. Write terminal</p>
+<p>[edit2 (04.08.2024)] (terminal opened project location)</p>
 <pre tabindex="0"><code>hugo server
 </code></pre><h2 id="create-new-post">Create New Post<a hidden class="anchor" aria-hidden="true" href="#create-new-post">#</a></h2>
 <p>When we need post new something, open your terminal in your hugo project folder and write the command below.</p>
@@ -136,7 +148,7 @@ draft = false
 <p>in my case i set the date like this</p>
 <pre tabindex="0"><code>date = 2024-08-02T08:00:06+03:00
 </code></pre><p>[edit1 (03.08.2024)]
-upss if you dont re-deploy on github actions, site will be expired and new post doest reloaded. in my case, resolve path is</p>
+upss if you dont re-deploy on github actions, site will be expired and new post doesnt reloaded. in my case, resolve path is</p>
 <pre tabindex="0"><code>github &gt; actions &gt; Deploy Hugo site to Pages &gt; Run workflow
 </code></pre><p>if your case &lsquo;Deploy Hugo site to Pages&rsquo; doesnt appear firstly add this workflow in github, here is the <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">guide</a></p>
 
