@@ -4,28 +4,53 @@
     <title>Posts on Blog Selçuk</title>
     <link>//localhost:1313/posts/</link>
     <description>Recent content in Posts on Blog Selçuk</description>
-    <generator>Hugo -- 0.130.0</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Aug 2024 08:00:06 +0300</lastBuildDate>
-    <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Aug 2024 02:22:40 +0300</lastBuildDate><atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PdfFormer </title>
+      <link>//localhost:1313/posts/pdfformer/</link>
+      <pubDate>Mon, 05 Aug 2024 02:22:40 +0300</pubDate>
+      
+      <guid>//localhost:1313/posts/pdfformer/</guid>
+      <description>Example</description>
+    </item>
+    
     <item>
       <title>Hugo Basics</title>
       <link>//localhost:1313/posts/hugo-basics/</link>
       <pubDate>Fri, 02 Aug 2024 08:00:06 +0300</pubDate>
+      
       <guid>//localhost:1313/posts/hugo-basics/</guid>
-      <description>First Thing First Actually first of all you know how do start localhost your web site. And when your start your host, your files can be hot reload during server live. Easy to use. Write terminal [edit2 (04.08.2024)] (terminal opened project location)
-hugo server Create New Post When we need post new something, open your terminal in your hugo project folder and write the command below.
-hugo new posts/new-file.md and hugo automatically create file like this</description>
+      <description>[edit2 (04.08.2024)] ~
+Install Hugo on Macos Easy installation with brew, if your pc doesnt recognise brew, firstly install package manager brew here
+brew install hugo Install Hugo on Windows Easy installation with chocolatey, if your pc doesnt recgnoise chocolatey, firstly install package manager cohoco in here. tip : use admin powershell
+choco install hugo-extended hugo installation page
+~
+First Thing First Actually first of all you know how do start localhost your web site.</description>
     </item>
+    
+    <item>
+      <title>Itext7 Csharp</title>
+      <link>//localhost:1313/posts/itext-csharp/</link>
+      <pubDate>Fri, 02 Aug 2024 08:00:06 +0300</pubDate>
+      
+      <guid>//localhost:1313/posts/itext-csharp/</guid>
+      <description>Add nuget packagesv2
+itext7 by Apryse Software itext7.bouncy-castle-adapter by Apryse Software here is the official web page</description>
+    </item>
+    
     <item>
       <title>MarkDown Guide </title>
       <link>//localhost:1313/posts/first/</link>
       <pubDate>Tue, 30 Jul 2024 20:29:23 +0300</pubDate>
+      
       <guid>//localhost:1313/posts/first/</guid>
       <description>Lets learn basics markdown with code examples.
 [edit1 (02.08.2024)] This post updated when new knowledge has reached. This post date will be first push date.
 Headers save the day!
 Heading 1 # Heading 1 Heading 2 ## Heading 2 Heading 3 ### Heading 3 Heading 4 #### Heading 4 Heading 5 ##### Heading 5 Heading 6 ###### Heading 6 Embedded Code If you add your code examples use this quotes</description>
     </item>
+    
   </channel>
 </rss>

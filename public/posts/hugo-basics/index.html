@@ -15,7 +15,9 @@ choco install hugo-extended hugo installation page
 First Thing First Actually first of all you know how do start localhost your web site.">
 <meta name="author" content="">
 <link rel="canonical" href="//localhost:1313/posts/hugo-basics/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="//localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
@@ -41,7 +43,7 @@ First Thing First Actually first of all you know how do start localhost your web
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
+                --hljs-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
             }
@@ -100,6 +102,8 @@ First Thing First Actually first of all you know how do start localhost your web
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -111,10 +115,10 @@ First Thing First Actually first of all you know how do start localhost your web
 <article class="post-single">
   <header class="post-header">
     
-    <h1 class="post-title entry-hint-parent">
+    <h1 class="post-title">
       Hugo Basics
     </h1>
-    <div class="post-meta"><span title='2024-08-02 08:00:06 +0300 +03'>August 2, 2024</span>
+    <div class="post-meta">&lt;span title=&#39;2024-08-02 08:00:06 &#43;0300 &#43;03&#39;&gt;August 2, 2024&lt;/span&gt;
 
 </div>
   </header> 
@@ -163,8 +167,7 @@ upss if you dont re-deploy on github actions, site will be expired and new post 
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="//localhost:1313/">Blog Selçuk</a></span> · 
-
+    <span>&copy; 2024 <a href="//localhost:1313/">Blog Selçuk</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
