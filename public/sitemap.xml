@@ -3,18 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>//localhost:1313/</loc>
-    <lastmod>2024-08-05T02:22:40+03:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/posts/pdfformer/</loc>
-    <lastmod>2024-08-05T02:22:40+03:00</lastmod>
+    <lastmod>2024-08-07T23:55:40+03:00</lastmod>
   </url><url>
     <loc>//localhost:1313/posts/</loc>
-    <lastmod>2024-08-05T02:22:40+03:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/posts/hugo-basics/</loc>
-    <lastmod>2024-08-02T08:00:06+03:00</lastmod>
+    <lastmod>2024-08-07T23:55:40+03:00</lastmod>
   </url><url>
     <loc>//localhost:1313/posts/itext-csharp/</loc>
+    <lastmod>2024-08-05T08:00:06+03:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/hugo-basics/</loc>
     <lastmod>2024-08-02T08:00:06+03:00</lastmod>
   </url><url>
     <loc>//localhost:1313/posts/first/</loc>

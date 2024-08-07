@@ -6,7 +6,20 @@
     <description>Recent content on Blog Selçuk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Aug 2024 08:00:06 +0300</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Aug 2024 00:05:40 +0300</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git Cmd Notes</title>
+      <link>//localhost:1313/posts/git-cmds/</link>
+      <pubDate>Thu, 08 Aug 2024 00:05:40 +0300</pubDate>
+      
+      <guid>//localhost:1313/posts/git-cmds/</guid>
+      <description>Basic create new branch and switch to the new branch [Create and Switch branch] &amp;gt; git checkout -b new_branch
+this command shortcut of these
+[Create Branch] &amp;gt; git branch new_branch
+[Switch Branch] &amp;gt; git checkout new_branch
+soruce : https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging</description>
+    </item>
+    
     <item>
       <title>Itext7 CSharp</title>
       <link>//localhost:1313/posts/itext-csharp/</link>
@@ -14,7 +27,7 @@
       
       <guid>//localhost:1313/posts/itext-csharp/</guid>
       <description>Whats ITEXT7 ? Its help us to pdf things. create, merge, rotate, change scale size and give us low level and high level access points. Easy and funny to manipulate pdfs. Its actively community support and firing github page. We select change to 2 language versions. Java and C#. I select C# version and go on&amp;hellip;
-more detail for feature, click here : https://itextpdf.com/products/features
+more detail for features, click here : https://itextpdf.com/products/features
 Setup Library in Visual Studio with nuget package manager Search bottom lines and check the developer team name &amp;lsquo;Apryse Software&amp;rsquo;.</description>
     </item>
     

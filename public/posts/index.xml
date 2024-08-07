@@ -6,14 +6,16 @@
     <description>Recent content in Posts on Blog Selçuk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Aug 2024 02:22:40 +0300</lastBuildDate><atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Aug 2024 23:55:40 +0300</lastBuildDate><atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>PdfFormer </title>
-      <link>//localhost:1313/posts/pdfformer/</link>
-      <pubDate>Mon, 05 Aug 2024 02:22:40 +0300</pubDate>
+      <title>Itext7 CSharp</title>
+      <link>//localhost:1313/posts/itext-csharp/</link>
+      <pubDate>Mon, 05 Aug 2024 08:00:06 +0300</pubDate>
       
-      <guid>//localhost:1313/posts/pdfformer/</guid>
-      <description>Example</description>
+      <guid>//localhost:1313/posts/itext-csharp/</guid>
+      <description>Whats ITEXT7 ? Its help us to pdf things. create, merge, rotate, change scale size and give us low level and high level access points. Easy and funny to manipulate pdfs. Its actively community support and firing github page. We select change to 2 language versions. Java and C#. I select C# version and go on&amp;hellip;
+more detail for feature, click here : https://itextpdf.com/products/features
+Setup Library in Visual Studio with nuget package manager Search bottom lines and check the developer team name &amp;lsquo;Apryse Software&amp;rsquo;.</description>
     </item>
     
     <item>
@@ -28,16 +30,6 @@ brew install hugo Install Hugo on Windows Easy installation with chocolatey, if 
 choco install hugo-extended hugo installation page
 ~
 First Thing First Actually first of all you know how do start localhost your web site.</description>
-    </item>
-    
-    <item>
-      <title>Itext7 Csharp</title>
-      <link>//localhost:1313/posts/itext-csharp/</link>
-      <pubDate>Fri, 02 Aug 2024 08:00:06 +0300</pubDate>
-      
-      <guid>//localhost:1313/posts/itext-csharp/</guid>
-      <description>Add nuget packagesv2
-itext7 by Apryse Software itext7.bouncy-castle-adapter by Apryse Software here is the official web page</description>
     </item>
     
     <item>
