@@ -14,3 +14,17 @@ this command shortcut of these
 [Switch Branch] > `git checkout new_branch`
 
 [soruce : https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+
+### Case : "new_branch" minor changes add to the main branch
+* make sure right branch, `git status` 
+* make new changes "new_branch"
+* add changes to the "new_branch" > `git add .`
+* commit changes > `git commit -m "new_branch : x changed to y"`
+  
+Change the target branch, this case is 'main' branch
+
+[switch branch] > `git checkout main`
+
+[merge branch] > `git merge new_branch`
+
+changes added main branch congrats!
