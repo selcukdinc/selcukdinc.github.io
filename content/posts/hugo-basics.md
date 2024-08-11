@@ -54,3 +54,52 @@ upss if you dont re-deploy on github actions, site will be expired and new post 
 github > actions > Deploy Hugo site to Pages > Run workflow
 ```
 if your case 'Deploy Hugo site to Pages' doesnt appear firstly add this workflow in github, here is the [guide](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+
+## Goldmark Extensions
+### Definition Lists (default Enabled)
+Apple
+:   Example of definition list with apple
+
+Orange
+:   Expamle of definition list with orange
+```
+Apple
+:   Example of definition list with apple
+
+Orange
+:   Expamle of definition list with orange
+```
+
+### Foot Notes (default Enabled)
+
+That's some text with a footnote.[^1]
+
+[^1]: And that's the footnote.
+
+```
+That's some text with a footnote.[^1]
+
+[^1]: And that's the footnote.
+```
+### Tables (default Enabled)
+X    | Column1  | Column2
+--   | --       | -- 
+Row1 | foo      | bar
+Row2 | baz      | bim
+```
+X    | Column1  | Column2
+--   | --       | -- 
+Row1 | foo      | bar
+Row2 | baz      | bim
+```
+### Task Lists (default Enabled)
+- [ ] First step pragramming
+  - [x] print 'Hello World'
+  - [ ] Learn variable types
+- [ ] Create cmd base rpg game 
+```
+- [ ] First step pragramming
+  - [x] print 'Hello World'
+  - [ ] Learn variable types
+- [ ] Create cmd base rpg game 
+```
