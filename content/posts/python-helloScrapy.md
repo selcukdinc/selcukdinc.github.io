@@ -4,7 +4,9 @@ date = 2024-08-24T16:33:42+03:00
 draft = false
 +++
 
-[Course Video - Youtube link](https://www.youtube.com/watch?v=mBoX_JCKZTE)
+[Course Video - (Youtube link)](https://www.youtube.com/watch?v=mBoX_JCKZTE)
+
+[Scrape Free Website](https://books.toscrape.com)
 
 My OS is windows 11, course shots macos. Some points differences. 
 
@@ -69,17 +71,23 @@ scrapy genspider bookspider books.toscrape.com
 ```
 ![spider_created](/images/scrapy-03.png "spider_created")
 
+* Created `.\bookscraper\bookscraper\spiders\bookspider.py` file
+
+![template_spider](/images/scrapy-03_1.png "template_spider")
+
 ### Step 6 : Install & Open Easier access with Shell
 
 * install shell
   * `pip install ipython`
 * Open shell
   * `scrapy shell`
+* Close shell (Return Powershell)
+  * `exit`
 
 # Part 4 (I) : First Scrapes with Shell 
 
   * Get data from "https://books.toscrape.com/"
-    * `fetch fetch('https://books.toscrape.com/')`
+    * `fetch('https://books.toscrape.com/')`
   * Get data form spesified css class
     *  `response.css('article.product_pod').get`
 
@@ -109,7 +117,9 @@ scrapy genspider bookspider books.toscrape.com
 * `book.css('h3 a').attrib['href']` output = `catalogue/a-light-in-the-attic_1000/index.html`
 
 # Part 4 (II) : Dive Into Scrape with Spider (Automate)
+
 ## Using bookspider.py
+
 ```
 def parse(self, response):
         books =response.css('article.product_pod')
@@ -121,7 +131,7 @@ def parse(self, response):
                 'url': book.css('h3 a').attrib['href']
             }
 ```
-run this program
+run this program (run inside powershell, if 'scrapy shell' is open, firstly close it)
 ```
 scrapy crawl bookspider
 ```
@@ -130,7 +140,9 @@ sample output
 2024-08-24 20:26:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://books.toscrape.com/>
 {'name': 'A Light in the ...', 'price': '£51.77', 'url': 'catalogue/a-light-in-the-attic_1000/index.html'}
 ```
+
 ## Check Every Page with Recursive bookspider.py
+
 ```
 def parse(self, response):
         books =response.css('article.product_pod')
@@ -151,4 +163,23 @@ def parse(self, response):
             else:
                 next_page_url = 'https://books.toscrape.com/catalogue/' + next_page
             yield response.follow(next_page_url, callback= self.parse)
+```
+if code works well, spider should have made scrape 1000 item  
+![recursive_spider_result](/images/scrapy_part4_resultv2.png "recursive_spider_result")
+
+# Part 5 : Build Discovery & Extraction Spider
+Get every book page inside data.
+* Now, to be more specific, we must learn selectors > `.xpath()`
+  * here is the some documents about `.xpath()`
+    * [Brief Intro to XPath](https://docs.scrapy.org/en/latest/intro/tutorial.html?highlight=xpath#xpath-a-brief-intro)
+    * [Selectors - XPath and CSS](https://docs.scrapy.org/en/latest/topics/selectors.html#topics-selectors)
+### Example [XPath()]: Get Type Of Book
+Inspect the target
+![inspect_target](/images/scrapy-part5_1.png "inspect_target")
+Get info about class and tags
+![get_info](/images/scrapy-part5_2.png "get_info")
+in our case is `.xpath()` should look like this
+```
+response.xpath("//ul[@class='breadcrumb']/li[@class='active']/preceding-sibling::li[1]/a/text()").get()
+# output : 'Poetry'
 ```
