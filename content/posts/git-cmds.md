@@ -28,3 +28,13 @@ Change the target branch, this case is 'main' branch
 [merge branch] > `git merge new_branch`
 
 changes added main branch congrats!
+
+### Case : Remove Cached Files 
+* for file
+```
+git rm --cached singlefile.txt
+```
+* for folder
+```
+git rm --cached -r .\hunderedTinyFiles\
+```
