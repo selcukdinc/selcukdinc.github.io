@@ -329,6 +329,215 @@ https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html,A Ligh
 # Part 6 : Cleaning Data With Item Pipelines
 
 * Scrapy Items ! What is it ?
+  * We define what exactcly need to us 
 * Structure Data using with scrapy items
 * So Scrapy Pipelines?
 * Cleaning Data with Item Pipelines
+
+In this section just arrange `items.py` and `piplines.py`. Combine part 5 to this files
+
+
+`Items.py` set what we uses items, if somewhere in spider file, program throw an error
+
+```
+import scrapy
+import scrapy.item
+
+
+class BookscraperItem(scrapy.Item):
+    # define the fields for your item here like:
+    name = scrapy.Field()
+    pass
+
+
+def serialize_price(value):
+    return f'$ {str(value)}'
+
+
+
+class BookItem(scrapy.Item):
+    url = scrapy.Field()
+    title = scrapy.Field()
+    upc = scrapy.Field()
+    product_type = scrapy.Field()
+    price = scrapy.Field()
+    price_excl_tax = scrapy.Field()
+    price_incl_tax = scrapy.Field()
+    tax = scrapy.Field()
+    availability = scrapy.Field()
+    num_reviews = scrapy.Field()
+    stars = scrapy.Field()
+    category = scrapy.Field()
+    description = scrapy.Field()
+``` 
+
+`bookspider.py` before we created new class, now each class member set value using part-5 technics
+
+```
+import scrapy
+from bookscraper.items import BookItem
+
+class BookspiderSpider(scrapy.Spider):
+   name = "bookspider"
+   allowed_domains = ["books.toscrape.com"]
+   start_urls = ["https://books.toscrape.com"]
+
+   def parse(self, response):
+       books =response.css('article.product_pod')
+       for book in books:
+           relative_url = book.css('h3 a ::attr(href)').get()
+
+           if 'catalogue/' in relative_url:
+               book_url = 'https://books.toscrape.com/' + relative_url
+           else:
+               book_url = 'https://books.toscrape.com/catalogue/' + relative_url
+           yield response.follow(book_url, callback= self.parse_book_page)
+
+       next_page = response.css('li.next a ::attr(href)').get()
+
+       if next_page is not None:
+           if 'catalogue/' in next_page:
+               next_page_url = 'https://books.toscrape.com/' + next_page
+           else:
+               next_page_url = 'https://books.toscrape.com/catalogue/' + next_page
+           yield response.follow(next_page_url, callback= self.parse)
+
+   def parse_book_page(self, response):
+       
+        table_rows = response.css("table tr")
+       
+        book_item = BookItem()
+       
+        book_item['url'] = response.url,
+        book_item['title'] = response.css('.product_main h1::text').get(),
+        book_item['upc'] = table_rows[0].css("td ::text").get(),
+        book_item['product_type'] = table_rows[1].css('td::text').get(),
+        book_item['price'] = response.css('p.price_color ::text').get(),
+        book_item['price_excl_tax'] = table_rows[2].css('td::text').get(),
+        book_item['price_incl_tax'] = table_rows[3].css('td::text').get(),
+        book_item['tax'] = table_rows[4].css('td::text').get(),
+        book_item['availability'] = table_rows[5].css('td::text').get(),
+        book_item['num_reviews'] = table_rows[6].css('td::text').get(),
+        book_item['stars'] = response.css("p.star-rating").attrib['class'],
+        book_item['category'] = response.xpath("//ul[@class='breadcrumb']/li[@class='active']/preceding-sibling::li[1]/a/text()").get(),
+        book_item['description'] = response.xpath("//div[@id='product_description']/following-sibling::p/text()").get(),
+        
+       
+        yield book_item
+```
+`pipelines.py` Values getting ok but needed to rework. Cleaning proccess is here. 
+```
+from itemadapter import ItemAdapter
+
+
+class BookscraperPipeline:
+    def process_item(self, item, spider):
+
+        adapter = ItemAdapter(item)
+
+        # Strip all whitespaces from strings
+        field_names = adapter.field_names()
+        for field_name in field_names:
+            if field_name != 'description':
+                value = adapter.get(field_name)
+                adapter[field_name] = value[0].strip()
+
+        # Category & Product Type --> switch to lowercase
+        lowercase_keys = ['category', 'product_type']
+        for lowercase_key in lowercase_keys:
+            value = adapter.get(lowercase_key)
+            adapter[lowercase_key] = value.lower()
+
+        # Price --> convert to float
+        price_keys = ['price', 'price_excl_tax', 'price_incl_tax', 'tax']
+        for price_key in price_keys:
+            value = adapter.get(price_key)
+            value = value.replace('£', '')
+            if value == '':
+                value = 0
+            adapter[price_key] = float(value)
+
+        # Availability --> extract number of books in stock
+        availability_string = adapter.get('availability')
+        split_string_array = availability_string.split('(')
+        if len(split_string_array) < 2:
+            adapter['availability'] = 0
+        else:
+            availability_array = split_string_array[1].split(' ')
+            adapter['availability'] = int(availability_array[0])
+
+
+        # Reviews --> convert string to number
+        num_reviews_string = adapter.get('num_reviews')
+        adapter['num_reviews'] = int(num_reviews_string)
+
+
+        # Stars --> convert text no number
+        stars_string = adapter.get('stars')
+        split_stars_array = stars_string.split(' ')
+        stars_text_value = split_stars_array[1].lower()
+        if stars_text_value == "zero":
+            adapter['stars'] = 0
+        elif stars_text_value == "one":
+            adapter['stars'] = 1
+        elif stars_text_value == "two":
+            adapter['stars'] = 2
+        elif stars_text_value == "three":
+            adapter['stars'] = 3
+        elif stars_text_value == "four":
+            adapter['stars'] = 4
+        elif stars_text_value == "five":
+            adapter['stars'] = 5
+
+        return item
+```
+Most important thing is `settings.py` inside activate "pipeline" lines
+```
+ITEM_PIPELINES = {
+   "bookscraper.pipelines.BookscraperPipeline": 300,
+}
+```
+and now run spider and save the data
+```
+# file saves from terminal location
+scrapy crawl bookspider -O cleandata.json
+
+# Output (changed to more readable): 
+{
+  "url": "https://books.toscrape.com/catalogue/set-me-free_988/index.html", 
+  "title": "Set Me Free", 
+  "upc": "ce6396b0f23f6ecc", 
+  "product_type": "books", 
+  "price": 17.46, 
+  "price_excl_tax": 17.46, 
+  "price_incl_tax": 17.46, 
+  "tax": 0.0, 
+  "availability": 19, 
+  "num_reviews": 0, 
+  "stars": 5, 
+  "category": "young adult", 
+  "description": ["Aaron Ledbetter’s future had been planned out for him since before he 
+  was born. Each year, the Ledbetter family vacation on Tybee Island gave Aaron a chance to 
+  briefly free himself from his family’s expectations. When he meets Jonas “Lucky” Luckett, 
+  a caricature artist in town with the traveling carnival, he must choose between the life
+   that’s been mapped out for him, and Aaron Ledbetter’s future had been planned out for 
+   him since before he was born. Each year, the Ledbetter family vacation on Tybee Island
+    gave Aaron a chance to briefly free himself from his family’s expectations. When he 
+    meets Jonas “Lucky” Luckett, a caricature artist in town with the traveling carnival,
+    he must choose between the life that’s been mapped out for him, and the chance at 
+    true love. ...more"]
+}
+```
+
+# Part 7 : Saving Data To Files & Databases
+* Saving Data Via The Command Line
+* Saving Data Via Feed Settings
+* Saving Data Into Databases
+
+## Saving Data Via The Command Line
+`scrapy crawl bookspider -O bookdata.csv`
+
+Diffirence between parameter `-O` and `-o`
+* `-O` : Overwrite data
+* `-o` : keep write data
+
