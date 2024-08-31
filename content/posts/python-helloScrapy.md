@@ -749,3 +749,84 @@ ITEM_PIPELINES = {
     "bookscraper.pipelines.SaveToMySQLPipeline": 400,
 }
 ```
+# Part 8 :Fake User-Agents & Browser Headers
+## Why We Get Blocked When Web Scraping
+Some web services want to public datas only reach real person And block unpersonally activity. Here is the key: How many people see few seconds in 1000 book ? Answer is "NoNe people" 
+## Explaining & Using User Agents To ByPass Getting Blocked
+But what if we keep want to data? Well... in this case we need know to how work this things.
+
+- my computer (none of changes) : Hi! Can i look book first of the list...
+- server : oh its real person, ok bro take it look!
+- mc (0.0002 sec. after): Its amazing! can i look second of book?
+- s : "This is Doesnt Coverage Real Person Time" Sorry you dont look a person, and i dont want bots or spiders. Get out, here is my site!
+- mc : "404" or "i am human test" 
+
+Lets change scenario
+
+We need to this time "different computer spec list" and this is called in headers inside client data and we change to what we say it is... For example in our hands 3 different client computer data, like win11, macos and linux pc specs.
+- mc (win11) : first book please
+- s : ok, code : 200
+- mc (linux, 0.0002 sec. after) : second book please
+- s : "hmm its different client request" ok, code : 200
+- mc (macos, 0.0002 sec. after) : third book please
+- s : "hmm its different client request" ok, code : 200
+
+it is simplified of changed client header in scrapy 
+
+And yeah it doesnt easy today websites...
+
+[lets check your agency](https://useragentstring.com/index.php)
+in my case website says
+* `Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0`
+and other machine examples
+* `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36`
+* `Mozilla/5.0 (X11; Ubuntu; Linux i686 on x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2820.59 Safari/537.36`
+
+Looks like id but it doesnt. Just says this is computer or phone or tablet. This device os is 'X' and borwser version is this.
+
+lets change few changes in `bookspider.py`
+```
+# new list! 
+  user_agent_list = [
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36',
+        'Mozilla/5.0 (iPhone; CPU iPhone OS 14_4_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1',
+        'Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1)',
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36 Edg/87.0.664.75',
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18363',
+    ]
+# clipped code 
+def parse(self, response):
+       books =response.css('article.product_pod')
+       for book in books:
+           relative_url = book.css('h3 a ::attr(href)').get()
+
+           if 'catalogue/' in relative_url:
+               book_url = 'https://books.toscrape.com/' + relative_url
+           else:
+               book_url = 'https://books.toscrape.com/catalogue/' + relative_url
+           yield response.follow(book_url, callback= self.parse_book_page, headers={"User-Agent":self.user_agent_list[random.randint(0, len(self.user_agent_list)-1)]})
+# clipped code  
+if next_page is not None:
+           if 'catalogue/' in next_page:
+               next_page_url = 'https://books.toscrape.com/' + next_page
+           else:
+               next_page_url = 'https://books.toscrape.com/catalogue/' + next_page
+           yield response.follow(next_page_url, callback= self.parse, headers={"User-Agent":self.user_agent_list[random.randint(0, len(self.user_agent_list)-1)]})
+```
+We change any user agent whant we want! In this code we pick random user agent
+
+`headers={"User-Agent":self.user_agent_list[random.randint(0, len(self.user_agent_list)-1)]}`
+## Explaining & Using Request Headers To ByPass Getting Blocked 
+Most complicated websites not only look `user-Agent` looks all of request headers.
+
+Here is the all of them,
+![table_tags](/images/scrapy-part8_1.png "table_tags")
+some point 
+
+server says : oh its only 5 machine much more faster than any human. Lets banned our website
+
+This stuations we can create fake user agents and not only use 5 header.
+
+Lets implement `middlewares.py`
+
+but first we need tu fake user agent api for all these. Course redirected [this site](https://scrapeops.io/), create or login account.
