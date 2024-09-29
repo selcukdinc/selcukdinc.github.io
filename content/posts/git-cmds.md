@@ -3,6 +3,16 @@ title = 'Git Cmd Notes'
 date = 2024-08-08T00:05:40+03:00
 draft = false
 +++
+
+### Basics
+[Create git repo] > `git init`
+
+[.gitignore file] (dont add or remove files from repo, create .gitignore file) >
+```
+folder/unwantedNote.txt
+itsWholeFolder/
+```
+if your add and commited before unwanted files, should be remove cached files
 ### Basic create new branch and switch to the new branch
 
 [Create and Switch branch] > `git checkout -b new_branch`
