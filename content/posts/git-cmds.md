@@ -7,8 +7,9 @@ draft = false
 ### Basics
 [Create git repo] > `git init`
 
-[.gitignore file] (dont add or remove files from repo, create .gitignore file) >
+[.gitignore file] (dont add  unwanted files to repo, create .gitignore file) >
 ```
+[inside of .gitignore file]
 folder/unwantedNote.txt
 itsWholeFolder/
 ```
