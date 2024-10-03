@@ -5,14 +5,49 @@ draft = false
 +++
 
 ### Basics
-[Create git repo] > `git init`
+- [Create git repo] > `git init`
 
-[.gitignore file] (dont add  unwanted files to repo, create .gitignore file) >
+- [see what happened your git] > `git status`
+
+- [track or update files]
+```
+[for all unstaged files]
+
+git add .
+
+[for specified files]
+
+git add .\example.txt
+
+```
+
+- [.gitignore file] (dont add  unwanted files to repo, create .gitignore file) >
 ```
 [inside of .gitignore file]
 folder/unwantedNote.txt
 itsWholeFolder/
 ```
+
+```
+# ignore all .a files
+*.a
+
+# but do track lib.a, even though you're ignoring .a files above
+!lib.a
+
+# only ignore the TODO file in the current directory, not subdir/TODO
+/TODO
+
+# ignore all files in any directory named build
+build/
+
+# ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
+
+# ignore all .pdf files in the doc/ directory and any of its subdirectories
+doc/**/*.pdf
+```
+[source of above infos](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository) 
 if your add and commited before unwanted files, should be remove cached files
 ### Basic create new branch and switch to the new branch
 
