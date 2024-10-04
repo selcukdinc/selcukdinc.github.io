@@ -2,6 +2,7 @@
 title = 'Git Cmd Notes'
 date = 2024-08-08T00:05:40+03:00
 draft = false
+ShowToc = true
 +++
 
 ### Basics
