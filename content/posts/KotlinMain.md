@@ -291,3 +291,321 @@ class Person(val firstName: String = "Peter", val lastName: String = "Parker"){
         println("$firstName $nickNameToPrint $lastName")
     }
 ```
+## Interfaces
+Create interface
+```
+interface PersonInfoProvider {
+    
+}
+```
+#### Override Function
+```
+interface PersonInfoProvider{
+    fun printInfo(person: Person)
+}
+
+class BasicInfoProvider : PersonInfoProvider {
+    override fun printInfo(person: Person) {
+        println("basicInfoProvider")
+        person.printInfo()
+    }
+}
+
+fun main() {
+    val provider = BasicInfoProvider()
+
+    provider.printInfo(Person())
+}
+```
+##### Override val
+```
+interface PersonInfoProvider{
+    val providerInfo: String
+    fun printInfo(person: Person) {
+        println(providerInfo)
+        person.printInfo()
+    }
+}
+
+class BasicInfoProvider : PersonInfoProvider {
+    override val providerInfo: String
+        get() = "BasicInfoProvider"
+
+    override fun printInfo(person: Person) {
+        super.printInfo(person)
+        println("Additional print statement")
+    }
+}
+
+fun main() {
+    val provider = BasicInfoProvider()
+
+    provider.printInfo(Person())
+}
+```
+Final touch 
+```
+interface PersonInfoProvider{
+    val providerInfo: String
+    fun printInfo(person: Person) {
+        println(providerInfo)
+        person.printInfo()
+    }
+}
+
+interface SessionInfoProvider {
+    fun getSessionId(): String
+}
+
+class BasicInfoProvider : PersonInfoProvider, SessionInfoProvider {
+    override val providerInfo: String
+        get() = "BasicInfoProvider"
+
+    override fun printInfo(person: Person) {
+        super.printInfo(person)
+        println("Additional print statement")
+    }
+
+    override fun getSessionId(): String {
+        return "Session"
+    }
+}
+
+fun main() {
+    val provider = BasicInfoProvider()
+
+    provider.printInfo(Person())
+    provider.getSessionId()
+
+    checkTypes(provider)
+}
+
+fun checkTypes(infoProvider: PersonInfoProvider){
+    if (infoProvider !is SessionInfoProvider){
+        println("not a session info provider")
+    }else{
+        println("is a session info provider")
+        // Method 1
+        //(infoProvider as SessionInfoProvider).getSessionId()
+        // Method 2, Smart casting
+        infoProvider.getSessionId()
+    }
+}
+```
+## Inheritance
+Create new kotlin file
+##### FancyInfoProvider.kt
+```
+class FancyInfoProvider : BasicInfoProvider() {
+
+    override val sessionIdPrefix: String
+        get() = "Fancy Session"
+
+    override val providerInfo: String
+        get() = "Fancy Info Provider"
+
+    override fun printInfo(person: Person) {
+        super.printInfo(person)
+        println("Fancy Info")
+    }
+}
+```
+##### PersonInfoProvider
+```
+interface PersonInfoProvider{
+    val providerInfo: String
+    fun printInfo(person: Person) {
+        println(providerInfo)
+        person.printInfo()
+    }
+}
+
+interface SessionInfoProvider {
+    fun getSessionId(): String
+}
+
+open class BasicInfoProvider : PersonInfoProvider, SessionInfoProvider {
+    override val providerInfo: String
+        get() = "BasicInfoProvider"
+
+
+    protected open val sessionIdPrefix = "Session"
+
+
+    override fun printInfo(person: Person) {
+        super.printInfo(person)
+        println("Additional print statement")
+    }
+
+    override fun getSessionId(): String {
+        return sessionIdPrefix
+    }
+}
+
+fun main() {
+    val provider = FancyInfoProvider()
+
+
+    provider.printInfo(Person())
+    provider.getSessionId()
+
+    checkTypes(provider)
+}
+
+fun checkTypes(infoProvider: PersonInfoProvider){
+    if (infoProvider !is SessionInfoProvider){
+        println("not a session info provider")
+    }else{
+        println("is a session info provider")
+        //(infoProvider as SessionInfoProvider).getSessionId()
+        infoProvider.getSessionId()
+    }
+}
+
+```
+
+## Object Expressions
+```
+    val provider = object : PersonInfoProvider{
+        override val providerInfo: String
+            get() = "New Info Provider"
+
+        fun getSessionId() = "id"
+    }
+```
+## Companion Objects
+```
+interface IdProvider {
+    fun getId(): String
+}
+
+class Entity private constructor(val id: String) {
+
+    companion object Factory : IdProvider{
+        override fun getId(): String {
+            return "123"
+        }
+
+        const val id = "id"
+        
+        fun create() = Entity(id)
+    }
+}
+
+fun main() {
+
+    val entity = Entity.Factory.create()
+    Entity.id
+}
+```
+
+## Object Declaration
+
+```
+object EntityFactory {
+    fun create() = Entity("id", "name")
+}
+
+class Entity (val id: String, val name: String) {
+    override fun toString(): String {
+        return "id:$id name: $name"
+    }
+}
+
+fun main() {
+
+    val entity = EntityFactory.create()
+    println(entity)
+}
+```
+
+## Enum Classes
+```
+import java.util.UUID
+
+enum class EntityType {
+    EASY, MEDIUM, HARD;
+
+    fun getFormattedName() = name.toLowerCase().capitalize()
+}
+
+object EntityFactory {
+    fun create(type: EntityType) : Entity {
+        val id = UUID.randomUUID().toString()
+
+        val  name = when(type){
+            EntityType.EASY -> type.name
+            EntityType.MEDIUM -> type.getFormattedName()
+            EntityType.HARD -> "Hard"
+        }
+
+        return Entity(id, name)
+    }
+}
+
+class Entity (val id: String, val name: String) {
+    override fun toString(): String {
+        return "id:$id name: $name"
+    }
+}
+
+fun main() {
+
+    val entity = EntityFactory.create(EntityType.EASY)
+    println(entity)
+
+    val mediumEntity = EntityFactory.create(EntityType.MEDIUM)
+    println(mediumEntity)
+}
+```
+## Sealed Classes
+```
+import java.util.UUID
+
+enum class EntityType {
+    HELP, EASY, MEDIUM, HARD;
+
+    fun getFormattedName() = name.toLowerCase().capitalize()
+}
+
+object EntityFactory {
+    fun create(type: EntityType) : Entity {
+        val id = UUID.randomUUID().toString()
+
+        val  name = when(type){
+            EntityType.EASY -> type.name
+            EntityType.MEDIUM -> type.getFormattedName()
+            EntityType.HARD -> "Hard"
+            EntityType.HELP -> type.getFormattedName()
+        }
+
+        return when(type){
+            EntityType.EASY -> Entity.Easy(id, name)
+            EntityType.MEDIUM -> Entity.Medium(id, name)
+            EntityType.HARD -> Entity.Hard(id, name, 2f)
+            EntityType.HELP -> Entity.help
+        }
+    }
+}
+
+sealed class Entity () {
+    object help : Entity() {
+        val name = "help"
+    }
+    data class Easy(val id: String, val name: String): Entity()
+    data class Medium(val id: String, val name: String): Entity()
+    data class Hard(val id: String, val name: String, val multiplier: Float): Entity()
+}
+
+fun main() {
+    val entity:Entity = EntityFactory.create(EntityType.HARD)
+    val msg = when(entity){
+        Entity.help -> "help class"
+        is Entity.Easy -> "easy class"
+        is Entity.Medium -> "medium class"
+        is Entity.Hard -> "hard class"
+    }
+
+    println(msg)
+}
+```
