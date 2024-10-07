@@ -609,3 +609,66 @@ fun main() {
     println(msg)
 }
 ```
+
+## Data Classes
+```
+fun main() {
+    val entity1 = Entity.Easy("id", "name")
+    val entity2 = Entity.Easy("id", "name")
+
+    if(entity1 === entity1){
+        println("they are equal")
+    } else {
+        println("they are not equal")
+    }
+}
+```
+
+## Extensin Functions / Properties
+```
+[outside of main]
+fun Entity.Medium.printInfo(){
+    println("Medium class: $id")
+}
+
+val Entity.Medium.info: String
+    get() = "some info"
+
+[inside of main]
+   Entity.Medium(id = "id", name = "name").printInfo()
+
+   val entity1 = Entity.Easy("id", "name")
+    val entity2 = EntityFactory.create(EntityType.MEDIUM)
+    if (entity2 is Entity.Medium){
+        entity2.printInfo()
+        entity2.info
+    }
+```
+
+## Advanced Functions
+Created HigerOrderFunctions.kt
+```
+fun printFilteredStrings(list: List<String>, predicate: ((String) -> Boolean)?){
+    list.forEach {
+        if(predicate?.invoke(it) == true){
+            println(it)
+        }
+    }
+}
+
+val predicate: (String) -> Boolean = {
+    it.startsWith("J")
+}
+
+fun getPrintPredicate(): (String) -> Boolean{
+    return { it.startsWith("J") }
+}
+
+fun main(){
+    val list = listOf("Kotlin", "Java", "C++", "Javascript")
+    printFilteredStrings(list, getPrintPredicate())
+    
+    printFilteredStrings(list, null)
+}
+```
+
