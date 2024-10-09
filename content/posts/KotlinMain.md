@@ -671,4 +671,46 @@ fun main(){
     printFilteredStrings(list, null)
 }
 ```
+## Combine Functions
+Functional.kt file created
+```
+    val list = listOf("Kotlin", "Java", "C++", "Javascript", null, null)
+    list
+        .filterNotNull()
+        .filter {
+            it.startsWith("J")
+        }
+        .map {
+            it.length
+        }
+        .forEach {
+        println(it)
+    }
+// output : 4
+// output : 10
+```
 
+```
+    list
+        .filterNotNull()
+        .takeLast(3) // .take => takes first 3 item, .takeLast => takes last 3 item
+        .forEach {
+        println(it)
+    }
+// output : Java
+// output : C++
+// output : Javascript
+```
+
+```
+list
+        .filterNotNull()
+        .associate { it to it.length }
+        .forEach {
+        println("${it.value}, ${it.key}")
+    }
+// output : 6, Kotlin
+// output : 4, Java
+// output : 3, C++
+// output : 10, Javascript
+```
