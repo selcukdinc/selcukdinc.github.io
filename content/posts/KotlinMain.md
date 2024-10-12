@@ -714,3 +714,39 @@ list
 // output : 3, C++
 // output : 10, Javascript
 ```
+# Basic Playable Rock & Paper & Scissor Game
+```
+fun main(){
+    var computerChoice = ""
+    var playerChoice = ""
+    print("Rock, Paper or Scissors? Enter your choice\n")
+    print("Choice : ")
+    playerChoice = readln()
+    playerChoice = playerChoice.lowercase()
+    
+    while (playerChoice != "rock" && playerChoice != "paper" && playerChoice != "scissors"){
+        print("Wrong Choice, try again : ")
+        playerChoice = readln()
+        playerChoice = playerChoice.lowercase()
+
+    }
+    val randomNumber = (1..3).random()
+    when (randomNumber){
+        1 -> computerChoice = "rock"
+        2 -> computerChoice = "paper"
+        3 -> computerChoice = "scissors"
+    }
+    println(computerChoice)
+    val winner = when{
+        playerChoice == computerChoice -> "Tie"
+        playerChoice == "rock" && computerChoice == "scissors" -> "Player"
+        playerChoice == "scissors" && computerChoice == "paper" -> "Player"
+        playerChoice == "paper" && computerChoice == "rock" -> "Player"
+        else -> "Computer"
+    }
+    when(winner){
+        "Tie" -> println("is Tie!")
+        else -> println("$winner win this game")
+    }
+}
+```
