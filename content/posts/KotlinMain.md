@@ -750,3 +750,65 @@ fun main(){
     }
 }
 ```
+
+# Create Coffee Machine Basics on Console
+```
+data class CoffeeDetails(
+    val sugarCount: Int,
+    val name: String,
+    val size:String,
+    val creamAmount: Int)
+
+fun main(){
+    val coffeeForDenis = CoffeeDetails(2, "denis", "xxl", 1)
+    askCoffeeDetails()
+}
+
+fun askCoffeeDetails(){
+    println("Who is this coffee for ? ")
+    val name = readln()
+    println("How many pieces of sugar do you want?")
+    val sugarCount = readln().toIntOrNull()
+    println("How many cream do you want?")
+    val creamCount = readln().toIntOrNull()
+    println("How much coffee do you want?")
+    val coffeeSize = readln()
+
+    // call Function
+    if (sugarCount != null && creamCount != null){
+        makeCoffee(CoffeeDetails(sugarCount, name, coffeeSize, creamCount))
+    }
+    else
+        println("wrong input! Sugar or cream amount is should be int format")
+}
+// Define Function
+fun makeCoffee(coffeeDetails: CoffeeDetails){
+    when{
+        coffeeDetails.sugarCount < 0 && coffeeDetails.creamAmount < 0->
+            println("Coffee with doesn't accept negative sugar and cream amount Dear ${coffeeDetails.name}, preparing sugar and cream free coffee")
+
+        coffeeDetails.sugarCount < 0 && coffeeDetails.creamAmount == 0 ->
+            println("Coffee with doesn't accept negative sugar amount Dear ${coffeeDetails.name}, preparing sugar and cream free coffee")
+
+        coffeeDetails.sugarCount == 0 && coffeeDetails.creamAmount < 0 ->
+            println("Coffee with doesn't accept negative cream amount Dear ${coffeeDetails.name}, preparing sugar and cream free coffee")
+
+        coffeeDetails.sugarCount == 0 && coffeeDetails.creamAmount == 0->
+            println("Coffee is ready! with zero sugar and zero cream for${coffeeDetails.name}")
+
+        coffeeDetails.sugarCount == 0 && coffeeDetails.creamAmount > 0->
+            println("Coffee is ready! with zero sugar and added ${coffeeDetails.creamAmount} " +
+                    "cream for${coffeeDetails.name}")
+
+        coffeeDetails.sugarCount == 1 ->
+            println("Coffee is ready! with ${coffeeDetails.sugarCount} " +
+                    "spoon of sugar and added ${coffeeDetails.creamAmount} " +
+                    "cream for ${coffeeDetails.name}")
+
+        else ->
+            println("Coffee is ready! with ${coffeeDetails.sugarCount} " +
+                    "spoons of sugar and added ${coffeeDetails.creamAmount} " +
+                    "cream for ${coffeeDetails.name}")
+    }
+}
+``` 
