@@ -16,3 +16,9 @@ Button(onClick = {
     Text("Click Me!")
 }
 ```
+
+### ?:  -  Elvis Operator
+if variable goes null then give it default value
+```
+val inputValueDouble = inputValue.toDoubleOrNull() ?: 0.0
+```
