@@ -22,3 +22,11 @@ if variable goes null then give it default value
 ```
 val inputValueDouble = inputValue.toDoubleOrNull() ?: 0.0
 ```
+
+### Nullable String
+```
+val name : String? = "Ella"
+name?.let{
+println(it..uppercase())
+}
+```
