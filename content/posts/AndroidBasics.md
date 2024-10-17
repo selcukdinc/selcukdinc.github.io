@@ -30,3 +30,11 @@ name?.let{
 println(it..uppercase())
 }
 ```
+
+### Give Space Between UI Elements
+```
+// vertical spaces
+Spacer(modifier = Modifier.height(16.dp))
+// horizontal space
+Spacer(modifier = Modifier.width(16.dp))
+```
