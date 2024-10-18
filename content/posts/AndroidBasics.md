@@ -38,3 +38,13 @@ Spacer(modifier = Modifier.height(16.dp))
 // horizontal space
 Spacer(modifier = Modifier.width(16.dp))
 ```
+
+### Check only numbers
+```
+onValueChange = { input ->
+        // Sadece rakamları kontrol etmek için
+        if (input.all { it.isDigit() }) {
+            age.value = input.toIntOrNull() ?: 0
+        }
+    }
+```
