@@ -48,3 +48,14 @@ onValueChange = { input ->
         }
     }
 ```
+
+### Concept of Arrange UI Elements
+```
+Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ){
+	// UI Elements
+}
+```
