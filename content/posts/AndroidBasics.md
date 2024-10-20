@@ -2,6 +2,7 @@
 title = 'AndroidBasics'
 date = 2024-10-13T11:29:49+03:00
 draft = false
+ShowToc = true
 +++
 ### Create Toast With Clik the Button
 ```
@@ -57,5 +58,32 @@ Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ){
 	// UI Elements
+}
+```
+
+
+### Create Dropdown Box
+```
+Box{
+	Button(onClick = {}) {
+		Text("Select")
+		Icon(Icons.Default.ArrowDropDown,
+			contentDescription = "Arrow Down")
+
+	}
+	DropdownMenu(expanded = true, onDismissRequest = {}) {
+		DropdownMenuItem(
+				text = { Text("Example 1") },
+					 onClick = {})
+		DropdownMenuItem(
+				text = { Text("Example 2") },
+					 onClick = {})
+		DropdownMenuItem(
+				text = { Text("Example 3") },
+					 onClick = {})
+		DropdownMenuItem(
+				text = { Text("Milimeters") },
+					 onClick = {})
+	}
 }
 ```
