@@ -87,3 +87,19 @@ Box{
 	}
 }
 ```
+
+### viewModel add project
+```
+// inside of .toml ,version number may be outdated, chekout official website
+androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version = "2.8.6" }
+
+// inside of build.gradle
+dependencies {
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    }
+
+// inside of MainActivity
+import androidx.lifecycle.viewmodel.compose.viewModel
+
+```
