@@ -103,3 +103,14 @@ dependencies {
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 ```
+
+### Add Maps dependencies
+```
+    implementation(libs.maps.compose)
+    implementation(libs.play.services.location)
+
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.androidx.navigation.compose)
+```
