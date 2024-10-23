@@ -114,3 +114,15 @@ import androidx.lifecycle.viewmodel.compose.viewModel
     implementation(libs.converter.gson)
     implementation(libs.androidx.navigation.compose)
 ```
+
+
+### ADD Retrofit for Api Calls
+```
+[build.gradle.kts]
+implementation(libs.retrofit2.retrofit)
+
+[project file]
+import retrofit2.Retrofit
+etc.
+
+```
