@@ -18,3 +18,6 @@ event.sport             |❌ |✅
 event.sport.rugby.news  |❌ |✅ 
 event.sport.footbal     |✅ |✅ 
 event.sport.today-news  |✅ |✅ 
+
+### Fanout Exchange
+Without route key publish message to queues
