@@ -21,3 +21,6 @@ event.sport.today-news  |✅ |✅
 
 ### Fanout Exchange
 Without route key publish message to queues
+
+### Direct Exchange
+must be declared route key to publish messages (news type)
