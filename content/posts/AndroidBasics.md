@@ -104,30 +104,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 
 ```
 
-### Add Maps dependencies
-```
-    implementation(libs.maps.compose)
-    implementation(libs.play.services.location)
-
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation(libs.androidx.navigation.compose)
-```
-
-
-### ADD Retrofit for Api Calls
-```
-[build.gradle.kts]
-implementation(libs.retrofit2.retrofit)
-
-[project file]
-import retrofit2.Retrofit
-etc.
-
-```
-
 ### Add Restriction for GoogleCloud Service Api's
+
 Inside of `console.cloud.google.com` follow theese steps
 (Before these steps must create the api key on console)
 Credentials > Select your api service > Android restrictions > ADD
@@ -139,3 +117,39 @@ this step need to two parameter
 	3) write `gradle signingreport` and hit enter
 	4) now wait a little time and see diferentt keys, we need to SHA1 key, thats the fingerprint
 }
+
+# Dependencies
+
+### Add Maps dependencies
+
+```
+    implementation(libs.maps.compose)
+    implementation(libs.play.services.location)
+
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.androidx.navigation.compose)
+```
+
+### Navigation Dependencies
+
+```
+[build.gradle.kts] :app
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.ui)
+    implementation(libs.androidx.material)
+    implementation(libs.ui.tooling.preview)
+```
+
+### ADD Retrofit for Api Calls
+
+```
+[build.gradle.kts]
+implementation(libs.retrofit2.retrofit)
+
+[project file]
+import retrofit2.Retrofit
+etc.
+
+```
