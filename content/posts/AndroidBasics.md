@@ -118,6 +118,41 @@ this step need to two parameter
 	4) now wait a little time and see diferentt keys, we need to SHA1 key, thats the fingerprint
 }
 
+# ExitDialog
+```
+        val context = LocalContext.current
+        var showExitDialog by remember { mutableStateOf(false) }
+
+        BackHandler {
+            showExitDialog = true // Diyalog göster
+        }
+
+        if (showExitDialog) {
+            AlertDialog(
+                onDismissRequest = { showExitDialog = false },
+                // Çıkmak İstiyor Musunuz?
+                // Uygulamadan çıkmak istediğinize emin misiniz?
+                title = { Text(text = stringResource(R.string.Do_you_want_to_get_out)) },
+                text = { Text(text = stringResource(R.string.Are_you_sure_you_want_to_exit_the_app)) },
+                confirmButton = {
+                    Button(
+                        onClick = {
+                            // Uygulamadan çıkış
+                            (context as Activity).finish()
+                        }
+                    ) {
+                        Text(text = stringResource(R.string.Yes))
+                    }
+                },
+                dismissButton = {
+                    Button(onClick = { showExitDialog = false }) {
+                        Text(text = stringResource(R.string.No))
+                    }
+                }
+            )
+        }
+``` 
+
 # Dependencies
 
 ### Add Maps dependencies
