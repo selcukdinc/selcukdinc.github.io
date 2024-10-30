@@ -4,19 +4,7 @@ date = 2024-10-13T11:29:49+03:00
 draft = false
 ShowToc = true
 +++
-### Create Toast With Clik the Button
-```
-val context = LocalContext.current
-Button(onClick = {
-    Toast
-        .makeText(
-            context,
-            "Thanks for Clicking!",
-            Toast.LENGTH_LONG).show()
-}) {
-    Text("Click Me!")
-}
-```
+
 
 ### ?:  -  Elvis Operator
 if variable goes null then give it default value
@@ -62,30 +50,11 @@ Column(
 ```
 
 
-### Create Dropdown Box
+### Add Changable Texts in app
 ```
-Box{
-	Button(onClick = {}) {
-		Text("Select")
-		Icon(Icons.Default.ArrowDropDown,
-			contentDescription = "Arrow Down")
+// For Text filed Usage like this
+stringResource(R.string.Do_you_want_to_get_out)
 
-	}
-	DropdownMenu(expanded = true, onDismissRequest = {}) {
-		DropdownMenuItem(
-				text = { Text("Example 1") },
-					 onClick = {})
-		DropdownMenuItem(
-				text = { Text("Example 2") },
-					 onClick = {})
-		DropdownMenuItem(
-				text = { Text("Example 3") },
-					 onClick = {})
-		DropdownMenuItem(
-				text = { Text("Milimeters") },
-					 onClick = {})
-	}
-}
 ```
 
 ### viewModel add project
@@ -117,8 +86,8 @@ this step need to two parameter
 	3) write `gradle signingreport` and hit enter
 	4) now wait a little time and see diferentt keys, we need to SHA1 key, thats the fingerprint
 }
-
-# ExitDialog
+# Ready To Useable Codes
+## ExitDialog
 ```
         val context = LocalContext.current
         var showExitDialog by remember { mutableStateOf(false) }
@@ -152,6 +121,49 @@ this step need to two parameter
             )
         }
 ``` 
+
+
+## Create Dropdown Box
+```
+Box{
+	Button(onClick = {}) {
+		Text("Select")
+		Icon(Icons.Default.ArrowDropDown,
+			contentDescription = "Arrow Down")
+
+	}
+	DropdownMenu(expanded = true, onDismissRequest = {}) {
+		DropdownMenuItem(
+				text = { Text("Example 1") },
+					 onClick = {})
+		DropdownMenuItem(
+				text = { Text("Example 2") },
+					 onClick = {})
+		DropdownMenuItem(
+				text = { Text("Example 3") },
+					 onClick = {})
+		DropdownMenuItem(
+				text = { Text("Milimeters") },
+					 onClick = {})
+	}
+}
+```
+
+## Create Toast With Clik the Button
+```
+val context = LocalContext.current
+Button(onClick = {
+    Toast
+        .makeText(
+            context,
+            "Thanks for Clicking!",
+            Toast.LENGTH_LONG).show()
+}) {
+    Text("Click Me!")
+}
+```
+
+
 
 # Dependencies
 
