@@ -200,3 +200,12 @@ import retrofit2.Retrofit
 etc.
 
 ```
+
+### ADD Room Database Dependencies
+```
+    val room = "2.6.0"
+    // Room
+    implementation("androidx.room:room-runtime:$room")
+    implementation("androidx.room:room-ktx:$room")
+    kapt("androidx.room:room-compiler:$room")
+```
