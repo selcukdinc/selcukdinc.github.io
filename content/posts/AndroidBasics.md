@@ -7,7 +7,7 @@ ShowToc = true
 
 
 ### ?:  -  Elvis Operator
-if variable goes null then give it default value
+if variable goes null then give it default value and makes more tuf programs
 ```
 val inputValueDouble = inputValue.toDoubleOrNull() ?: 0.0
 ```
