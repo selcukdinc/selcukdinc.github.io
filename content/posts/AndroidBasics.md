@@ -81,7 +81,7 @@ Credentials > Select your api service > Android restrictions > ADD
 this step need to two parameter
 1. Package Name (inside the project top place placing like this package com.example)
 2. Fingerprint {
-	1) Open gradle window, (default placing right side, looks like tiny elephant icon
+	1) Open gradle window, (default placing right side, looks like tiny elephant icon)
 	2) Click Execute Gradle Task (looks like little cmd icon)
 	3) write `gradle signingreport` and hit enter
 	4) now wait a little time and see diferentt keys, we need to SHA1 key, thats the fingerprint
