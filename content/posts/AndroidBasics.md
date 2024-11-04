@@ -31,7 +31,7 @@ Spacer(modifier = Modifier.height(16.dp))
 Spacer(modifier = Modifier.width(16.dp))
 ```
 
-### Check only numbers
+### Check numbers on input
 ```
 onValueChange = { input ->
         // Sadece rakamları kontrol etmek için
