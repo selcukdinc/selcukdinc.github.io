@@ -23,6 +23,19 @@ println(it..uppercase())
 }
 ```
 
+### Example Column
+```
+Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        // TODO
+    }
+```
+
 ### Give Space Between UI Elements
 ```
 // vertical spaces
