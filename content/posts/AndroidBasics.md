@@ -36,6 +36,15 @@ Column(
     }
 ```
 
+### Example Text
+```
+Text(
+    text = stringResource(R.string.Hi),
+    fontSize = 24.sp,
+    fontWeight = FontWeight.Bold,
+    color = MaterialTheme.colorScheme.onBackground
+)
+```
 ### Give Space Between UI Elements
 ```
 // vertical spaces
