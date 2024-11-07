@@ -45,6 +45,18 @@ Text(
     color = MaterialTheme.colorScheme.onBackground
 )
 ```
+
+### Example Outlined Text
+```
+OutlinedTextField(
+    value = variable,
+    onValueChange = { variable = it },
+    label = { Text(text = stringResource(R.string.variable)) },
+    modifier = Modifier
+        .fillMaxWidth()
+        .padding(8.dp)
+    )
+``` 
 ### Give Space Between UI Elements
 ```
 // vertical spaces
