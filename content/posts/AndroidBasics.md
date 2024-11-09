@@ -57,6 +57,24 @@ OutlinedTextField(
         .padding(8.dp)
     )
 ``` 
+
+### Example Preview
+```
+@Preview(showBackground = true)
+@Composable
+fun LoginPreview() {
+    val authViewModel: AuthViewModel = viewModel()
+    LoginScreen(
+        authViewModel = authViewModel,
+        onNavigateToSignUp = {
+            // TODO
+        }
+    ){
+        // TODO
+    }
+}
+```
+
 ### Give Space Between UI Elements
 ```
 // vertical spaces
