@@ -74,7 +74,12 @@ fun LoginPreview() {
     }
 }
 ```
-
+### Example Clickable Text
+```
+Text(text = "Sample Text",
+            modifier = Modifier.clickable { onNavigateToSignUp() }
+        )
+```
 ### Give Space Between UI Elements
 ```
 // vertical spaces
