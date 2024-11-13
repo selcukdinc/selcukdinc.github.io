@@ -80,6 +80,21 @@ Text(text = "Sample Text",
             modifier = Modifier.clickable { onNavigateToSignUp() }
         )
 ```
+### Example Launch Effect
+```
+LaunchedEffect(TextObserableState){
+        when (TextObserableState) {
+            is Result.Success -> {
+                onSignInSuccess()
+                Toast.makeText(context, "Successful Return", Toast.LENGTH_SHORT).show()
+            }
+            is Result.Error -> {
+                Toast.makeText(context, "Something Went Wrong", Toast.LENGTH_SHORT).show()
+            }
+            else -> Unit
+        }
+    }
+```
 ### Give Space Between UI Elements
 ```
 // vertical spaces
