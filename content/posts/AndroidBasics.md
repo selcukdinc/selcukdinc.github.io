@@ -8,6 +8,7 @@ ShowToc = true
 ### Example of reusable variable
 ```
 var loginButActive by  remember { mutableStateOf(true) }
+var nameText by remember { mutableStateOf("") }
 ```
 ### ?:  -  Elvis Operator
 if variable goes null then give it default value and makes more tuf programs
