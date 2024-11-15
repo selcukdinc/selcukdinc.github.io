@@ -10,7 +10,7 @@ ShowToc = true
 
 - [see what happened your git] > `git status`
 
-- [track or update files]
+- [add to track or update tracked files]
 ```
 [for all unstaged files]
 
