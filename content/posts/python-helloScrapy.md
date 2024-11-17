@@ -10,7 +10,7 @@ ShowBreadCrumbs = true
 
 [Scrape Free Website](https://books.toscrape.com)
 
-My OS is windows 11, course shots macos. Some points differences. 
+My OS is windows 11 home, course shots macos.Inside the code some points differences. 
 
 Step 0 | Install Enviroments
 --|--
