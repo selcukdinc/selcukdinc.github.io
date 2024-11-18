@@ -197,7 +197,47 @@ this step need to two parameter
             )
         }
 ``` 
-
+## Text Field and Button Inside the Alert Dialog
+```
+if (showDialogCreateRoom){
+    AlertDialog( onDismissRequest = { showDialogCreateRoom = true },
+        title = { Text(text = stringResource(R.string.Create_a_new_room)) },
+        text={
+            OutlinedTextField(
+                value = name,
+                onValueChange = { name = it },
+                singleLine = true,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+            )
+        }, confirmButton = {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Button(
+                    onClick = {
+                        if (name.isNotBlank()) {
+                            showDialogCreateRoom = false
+                            roomViewModel.createRoom(name)
+                            roomViewModel.loadRooms()
+                        }
+                    }
+                ) {
+                    Text(text = stringResource(R.string.Add))
+                }
+                Button(
+                    onClick = { showDialogCreateRoom = false }
+                ) {
+                    Text(text = stringResource(R.string.Cancel))
+                }
+            }
+        })
+}
+```
 
 ## Create Dropdown Box
 ```
