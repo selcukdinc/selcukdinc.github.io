@@ -5,7 +5,7 @@ draft = false
 ShowToc = true
 +++
 
-### Git Basics
+### Git Basics for beginners
 - [Create git repo] > `git init`
 
 - [see what happened your git] > `git status`
