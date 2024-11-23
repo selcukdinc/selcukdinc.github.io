@@ -14,3 +14,14 @@ suspend fun login(email: String, password: String): User<Map<String, Any>>? {
         }
     }
 ```
+### Register Function
+```
+suspend fun register(email: String, password: String): User<Map<String, Any>>? {
+        return try {
+            account.create(ID.unique(), email, password)
+            login(email, password)
+        } catch (e: AppwriteException) {
+            null
+        }
+    }
+```
