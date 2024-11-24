@@ -25,3 +25,13 @@ suspend fun register(email: String, password: String): User<Map<String, Any>>? {
         }
     }
 ```
+### Keep Login Function
+```
+suspend fun getLoggedIn(): User<Map<String, Any>>? {
+    return try {
+        account.get()
+    } catch (e: AppwriteException) {
+        null
+    }
+}
+```
