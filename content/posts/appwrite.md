@@ -35,3 +35,9 @@ suspend fun getLoggedIn(): User<Map<String, Any>>? {
     }
 }
 ```
+### Logout Function
+```
+suspend fun logout() {
+    account.deleteSession("current")
+}
+```
