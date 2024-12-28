@@ -4,7 +4,14 @@ date = 2024-10-13T11:29:49+03:00
 draft = false
 ShowToc = true
 +++
-
+### Example Of IO Thread Function for ViewModel
+```
+fun fetchSomething() {
+        viewModelScope.launch (Dispatchers.IO){
+            // Fetching... on IO Thread (Faster and relase ui thread)
+        }
+    }
+```
 ### Example of reusable variable
 ```
 var loginButActive by  remember { mutableStateOf(true) }
