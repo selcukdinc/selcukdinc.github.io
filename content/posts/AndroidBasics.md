@@ -12,7 +12,7 @@ fun fetchSomething() {
         }
     }
 ```
-### Example of reusable variable
+### Example of reusable variable inside of screen
 ```
 var loginButActive by  remember { mutableStateOf(true) }
 var nameText by remember { mutableStateOf("") }
