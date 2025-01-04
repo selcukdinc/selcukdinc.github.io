@@ -4,6 +4,14 @@ date = 2024-10-13T11:29:49+03:00
 draft = false
 ShowToc = true
 +++
+### Examle Flow  Variable
+```
+// ViewModel
+    private val _strings = MutableStateFlow<List<String, Any>>(emptyList())
+    val strings: StateFlow<List<String, Any>> get() = _strings
+// Screen
+    val listedReports = exploreListViewModel.reports.collectAsState()
+```
 ### Example Of IO Thread Function for ViewModel
 ```
 fun fetchSomething() {
