@@ -85,3 +85,9 @@ git rm --cached singlefile.txt
 ```
 git rm --cached -r .\hunderedTinyFiles\
 ```
+
+### Case : Rename a folder
+```
+git mv "Old_folderName" "New_FolderName"
+```
+And need to be commit new change.
