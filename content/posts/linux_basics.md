@@ -5,6 +5,10 @@ draft = false
 ShowToc = true
 +++
 
+#### Copy Folder : `cp -r ./folder1 /home/user1`
+
+#### Rename Folder : `mv folder1 folder1_copied`
+
 #### List Ports : `sudo lsof -i -P -n`
 
 #### List Users : `cat /ect/passwd`
