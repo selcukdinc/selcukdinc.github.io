@@ -91,3 +91,10 @@ git rm --cached -r .\hunderedTinyFiles\
 git mv "Old_folderName" "New_FolderName"
 ```
 And need to be commit new change.
+
+### Case : Undo Added & Uncommited Files
+For Reproduction
+- `git add testFile`
+- Oh i forgot something in this file
+- `git reset testFile`  
+- Tada! Undo is Successfuly!
