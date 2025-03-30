@@ -4,6 +4,9 @@ date = 2025-03-26T17:43:03+03:00
 draft = false
 ShowToc = true
 +++
+#### Change Default Text Editor : `sudo update-alternatives --config editor`
+
+#### Get current active proccess : `top` or `htop`
 
 #### Copy Folder : `cp -r ./folder1 /home/user1`
 
