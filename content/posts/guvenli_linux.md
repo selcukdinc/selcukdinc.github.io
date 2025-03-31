@@ -156,8 +156,15 @@ ssh -i .\anahtar1 -p PORTSAYISI kullanici1@sunucuip
 Eğer bağlantı başarılı bir şekilde kurulmuş ise sunucu sizden passphrase isteyecektir, onuda girdikten sonra sunucuya bağlanmış olacaksınız.
 
 ---
+## Kaynakça
+- 'Güvenli SSH Bağlantısı Nasıl Yapılır' için faydalınılan kaynaklar - 
+  - [SSH To Windows Using Public Key (Video)](https://www.youtube.com/watch?v=Wx7WPDnwcDg)
+  - [Securing A Linux Server / SSH - Blog Post](https://kenhv.com/blog/securing-a-linux-server)
+  - Chatgpt 4o Prompt : 
+   
+    "Merhaba! Sana aklıma takılan soruları sormak istiyorum. Sunucumda Linux Ubuntu dağıtımı var. Sunucuya kullanmakta olduğum windows 11 - powershellden bağlanıyorum. Root yerine sudo grubuna dahil ettiğim kullanıcı oluşturdum. Bağlantıyı ise "ssh kullaniciadi@sunucuip" şeklinde yazıp bilgisayarımdan bağlanabiliyorum. Parolamı girdikten sonra sunucuya bağlanmış oluyorum. Fakat benim istediğim şey yalnızca kullanıcı adı ve parola dışında birde private key dahil olsun istiyorum. Bu güvenlik adımı için bir makale inceliyordum ed25519 kriptoloji metodunu kullanarak key oluşturdu ve sunucuya yükledi bir ssh_config dosyasını güncelleyip sunucuyu yeniden başlattı. 
 
-Bu başlık için faydalınılan kaynaklar -
-- Chatgpt 4o
-- [SSH To Windows Using Public Key (Video)](https://www.youtube.com/watch?v=Wx7WPDnwcDg)
-- [Securing A Linux Server / SSH - Blog Post](https://kenhv.com/blog/securing-a-linux-server)
+    Kaynak edindiğim site : https://kenhv.com/blog/securing-a-linux-server
+    Rehberde tamamladığım adımlar : "Generate an Ed25519 key (passphrase is optional but recommended):" "ssh-keygen -t ed25519" adımını tamamladım, keyi görüntüleyebiliyorum. Hatta 'passphrase' oluşturdum. Fakat ne amaçla kullanıldığını anlamadım.
+ 
+    Rehberde takıldığım adım : "Copy the key to your server:" adımında "ssh-copy-id -i <path-to-key> <user>@<ip>" işlemini yaptıktan sonra keyi sunucuda nasıl bulabilirim bilmiyorum. En son ssh'i yeniden başlattığımda bilgisayarımdaki key dosyasıyla nasıl bağlanabilirim? Takıldığım yerlerde yardımcı olursan sevinirim."
