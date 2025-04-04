@@ -156,7 +156,19 @@ ssh -i .\anahtar1 -p PORTSAYISI kullanici1@sunucuip
 Eğer bağlantı başarılı bir şekilde kurulmuş ise sunucu sizden passphrase isteyecektir, onuda girdikten sonra sunucuya bağlanmış olacaksınız.
 
 ---
+
+### Olası Hatalar
+#### 'WARNING: UNPROTECTED PRIVATE KEY FILE!' Hatası
+Eğer anahtar dosyanız bir git projesi içinde ise, ssh bağlantısı esnasında “WARNING: UNPROTECTED PRIVATE KEY FILE!” hatası almanız büyük olası. Bu sorunu çözebilmeniz için dosyanın okuma ve yazma ayarlarını güncellemeniz gerekir.
+
+___Sorunun Çözümü___
+- `chmod 0400 file` ile dosya yalnızca okuma moduna alınır.
+
+Tekrar bağlanmak istediğinizde hata almamanız gerekir.
+
+---
 ## Kaynakça
+
 - 'Güvenli SSH Bağlantısı Nasıl Yapılır' için faydalınılan kaynaklar - 
   - [SSH To Windows Using Public Key (Video)](https://www.youtube.com/watch?v=Wx7WPDnwcDg)
   - [Securing A Linux Server / SSH - Blog Post](https://kenhv.com/blog/securing-a-linux-server)
@@ -168,3 +180,7 @@ Eğer bağlantı başarılı bir şekilde kurulmuş ise sunucu sizden passphrase
     Rehberde tamamladığım adımlar : "Generate an Ed25519 key (passphrase is optional but recommended):" "ssh-keygen -t ed25519" adımını tamamladım, keyi görüntüleyebiliyorum. Hatta 'passphrase' oluşturdum. Fakat ne amaçla kullanıldığını anlamadım.
  
     Rehberde takıldığım adım : "Copy the key to your server:" adımında "ssh-copy-id -i <path-to-key> <user>@<ip>" işlemini yaptıktan sonra keyi sunucuda nasıl bulabilirim bilmiyorum. En son ssh'i yeniden başlattığımda bilgisayarımdaki key dosyasıyla nasıl bağlanabilirim? Takıldığım yerlerde yardımcı olursan sevinirim."
+- Olası Hatalar
+  - 'WARNING: UNPROTECTED PRIVATE KEY FILE!' Hatası
+    - sorunun çözüm [kaynağı](https://www.cyberciti.biz/faq/warning-unprotected-private-key-file-ssh-linux-unix-error/)
+    - chmod için faydalı [makale](https://www.linuxfoundation.org/blog/blog/classic-sysadmin-understanding-linux-file-permissions)
