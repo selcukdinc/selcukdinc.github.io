@@ -8,9 +8,19 @@ ShowToc = true
 
 #### Get current active proccess : `top` or `htop`
 
+---
+
+### _Folder Operations_
+
 #### Copy Folder : `cp -r ./folder1 /home/user1`
 
 #### Rename Folder : `mv folder1 folder1_copied`
+
+#### Delete File | Directories : 
+- single file : `rm /filepath/fileName`
+- multiple Folder :`rm -r /filepath/folderName`
+
+---
 
 #### List Ports : `sudo lsof -i -P -n`
 
@@ -20,6 +30,8 @@ ShowToc = true
 
 #### delete user : `userdel username`
 
+--- 
+
 ### Case : Create Sudo user
 "Warning! current user must be have sudo privileges"
 - Create user : `sudo adduser user1`
@@ -27,7 +39,9 @@ ShowToc = true
 - Add user Sudoers : `sudo usermod -aG sudo user1`
 - Verify sudo access : `su - user1`
   - then : `sudo ls /root`
-  
+
+---
+
 ## For PM2
 #### Access gui : `pm2 monit`
 #### start proccess : `pm2 start something`
