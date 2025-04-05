@@ -12,9 +12,20 @@ ShowToc = true
 
 ### _Folder Operations_
 
-#### Copy Folder : `cp -r ./folder1 /home/user1`
+#### Command : '_mv_'
+__mv__ have 2 abilitiy
+- Rename file
+  - `mv folder1 folder1_copied`
+- Move file
 
-#### Rename Folder : `mv folder1 folder1_copied`
+mv how to get it move or rename ? ([source](https://unix.stackexchange.com/questions/61388/how-to-decide-that-mv-moves-into-a-directory-rather-than-replacing-directory/61402#61402)) 
+`mv /test1 /test2`
+
+- if `/test2` parameter is a **folder path** (_not a file_) _AND_ **exists** then always do 'move' (test2/test1)
+
+- else if `/test2` parameter doesnt exists, then always do 'rename' ('test1' name to 'test2')
+
+#### Copy Folder : `cp -r ./folder1 /home/user1`
 
 #### Delete File | Directories : 
 - single file : `rm /filepath/fileName`
