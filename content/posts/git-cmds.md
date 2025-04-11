@@ -98,3 +98,6 @@ For Reproduction
 - Oh i forgot something in this file
 - `git reset testFile`  
 - Tada! Undo is Successfuly!
+
+## Case : Update Submodules
+- in main repo : `git submodule update --remote --merge`
