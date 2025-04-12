@@ -2,3 +2,5 @@ baseURL = 'selcukdinc.github.io'
 languageCode = 'en-us'
 title = 'Blog Selçuk'
 theme = "PaperMod"
+[markup.goldmark.renderer]
+unsafe = true
