@@ -4,7 +4,7 @@ date = 2025-03-15T20:01:01+03:00
 draft = false
 +++
 
-## Extended dork serach 
+## Extended dork search 
 `https://ewasion.github.io/opendirectory-finder/` --> [go](https://ewasion.github.io/opendirectory-finder/)
 
 ## Look at your pc wake up devices
