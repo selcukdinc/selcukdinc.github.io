@@ -101,3 +101,8 @@ For Reproduction
 
 ## Case : Update Submodules
 - in main repo : `git submodule update --remote --merge`
+
+
+## Case : Edit last commit
+- sometimes, we do unfinished commit. (Oh my enter key!)
+- `git commit --amend`
