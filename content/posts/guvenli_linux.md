@@ -10,6 +10,8 @@ ShowToc = true
 | Kullanıcı | Windows 11 Home 24H2 | 
 |Sunucu     | Linux-Ubuntu 24.04 LTS (Focal Fossa) |
 
+## SSH nedir?
+
 ## Güvenli SSH Bağlantısı Nasıl Yapılır ? (Sıfırdan)
 host firmasından sunucu kiraladığınız zaman size, sunucuya ait ip adresi, kullanıcı adı ve parola verir. (Genellikle root kullanıcısı verilir [Root kullanıcısı sunucunun bütün kaynaklarına erişimi olan kullanıcıdır])
 
