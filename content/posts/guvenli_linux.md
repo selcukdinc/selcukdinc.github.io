@@ -103,6 +103,8 @@ Bu adımıda sorunsuz tamamladıysanız bir sonraki adıma geçebiliriz
 
 [Sunucu Tarafı]
 
+___LÜTFEN EN AZ 2 BAĞLANTI KURUN___
+
 Bu adım kritiktir. Hatalı bir işlem ardından sunucunuza erişimi kaybedebilirsiniz. Lütfen bu adımı uygulamadan önce verilerinizi yedeklemeyi unutmayın.
 
 #### SSH Bağlantısının Zaman Aşımını Kapatalım
@@ -121,6 +123,8 @@ Bu adım bize sunucuya bağlandıktan sonra hiçbir işlem yapmasak dahi ssh ba�
 Şimdi sunucunuza yeniden bağlanın. Hiçbir şey yapmasanız dahi ssh bağlantınız siz çıkana kadar canlı kalacaktır.
 
 #### Anahtarlı Girişi Aktive Etme
+
+___LÜTFEN EN AZ 2 BAĞLANTI KURUN___
 
 Bu adımda minimum 2 adet ssh bağlantısı kurun. Bir tanesinde anahtarlı girişi test edeceğiz. Eğer bir hata ile karşılaşırsak diğer ssh bağlantısı ile yaptığımız değişiklikleri geriye alabiliriz.
 
