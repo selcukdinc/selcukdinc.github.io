@@ -99,8 +99,12 @@ For Reproduction
 - `git reset testFile`  
 - Tada! Undo is Successfuly!
 
-## Case : Update Submodules
+## Case - Submodules
+### Add Submodule to Cloned Repo
 - in main repo : `git submodule update --remote --merge`
+### Update submodule
+- in main repo : `git submodule update --remote --merge`
+
 
 
 ## Case : Edit last commit
