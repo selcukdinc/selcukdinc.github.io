@@ -65,4 +65,5 @@ IEEE Xplore içinde gelişmiş arama bölümü bulunmaktadır. burada şöyle bi
 ##### Not Tutun
 
 Her makale için kısa notlar tutmak, çok fazla makale taraması yapıldığında hayat kurtarır. Makalenizi otomatik kaydedebileceğiniz, notlarını ekleyebileceğiz programlarda mevcuttur. Açık kaynak ve gelir amacı gütmeyen geliştiriciler tarafından zotero adında uygulama oluşturulmuştur.
-    - [Zotero](https://www.zotero.org) ile sitelerini ziyaret edebilirsiniz. Word eklentisinin bulunması, tarayıcılarda bulunan eklentileri ile makaleleri direkt uygulamaya ekleme fırsatı vermesi uygulamaya bir şans vermeniz için güzel özelliklerdir. 
+    
+- [Zotero](https://www.zotero.org) ile sitelerini ziyaret edebilirsiniz. Word eklentisinin bulunması, tarayıcılarda bulunan eklentileri ile makaleleri direkt uygulamaya ekleme fırsatı vermesi uygulamaya bir şans vermeniz için güzel özelliklerdir. 
